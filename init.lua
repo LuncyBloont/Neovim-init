@@ -1,3 +1,6 @@
+
+-- SAFE LINE
+
 vim.opt.number = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
@@ -55,6 +58,7 @@ require("mason-lspconfig").setup {
         "ltex",
         "cmake",
         "pylsp",
+        "rust_analyzer"
     }
 }
 
@@ -78,6 +82,7 @@ require("lspconfig").tsserver.setup {}
 require("lspconfig").clangd.setup {}
 require("lspconfig").cmake.setup {}
 require("lspconfig").pylsp.setup {}
+require("lspconfig").rust_analyzer.setup {}
 
 -- test ##############################################################################################################################
 --            Long Line Test
