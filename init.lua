@@ -46,6 +46,7 @@ require("lazy").setup({
 })
 
 require("mason").setup()
+require("mason-lspconfig").setup()
 
 -- test ##############################################################################################################################
 --            Long Line Test
