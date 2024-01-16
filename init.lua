@@ -21,6 +21,7 @@ vim.opt.cindent = true
 vim.opt.autoindent = true
 
 if vim.g.neovide then
+    -- TODO
 end
 
 vim.opt.guifont = "UbuntuMono Nerd Font:h12"
@@ -46,7 +47,37 @@ require("lazy").setup({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = {
+        "lua_ls",
+        "tsserver",
+        "clangd",
+        "ltex",
+        "cmake",
+        "pylsp",
+    }
+}
+
+--- LSP:
+require("lspconfig").lua_ls.setup {
+    settings = {
+        Lua = {
+            runtime = {
+                version = "LuaJIT"
+            },
+            diagnostics = {
+                globals = {
+                    "vim"
+                }
+            }
+        }
+    }
+}
+require("lspconfig").ltex.setup {}
+require("lspconfig").tsserver.setup {}
+require("lspconfig").clangd.setup {}
+require("lspconfig").cmake.setup {}
+require("lspconfig").pylsp.setup {}
 
 -- test ##############################################################################################################################
 --            Long Line Test
