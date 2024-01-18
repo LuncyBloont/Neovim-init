@@ -14,5 +14,8 @@ vim.opt.scrolloff = 12
 vim.opt.sidescroll = 1
 vim.opt.scroll = 1
 vim.opt.wrap = false
+vim.opt.linespace = 5
 
 vim.opt.guifont = "UbuntuMono Nerd Font:h12"
+
+-- test line_sapce
